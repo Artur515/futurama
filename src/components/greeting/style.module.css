@@ -1,0 +1,23 @@
+.greeting {
+    padding: 50px;
+    display: flex;
+    font-weight: 900;
+    font-size: 26px;
+}
+
+.btn_go {
+    width: 150px;
+    position: absolute;
+    top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(#540000, #d70023);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes view{
+
+
+}

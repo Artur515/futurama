@@ -1,0 +1,53 @@
+.outer {
+    padding-top: 100px;
+    display: block;
+    margin: 10px;
+    width: 300px;
+    height: 380px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+}
+
+.hoverEffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    box-shadow: 0px 0px 20px -5px #000;
+}
+
+
+.hoverEffect img {
+    display: block;
+    position: relative;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.hoverEffect:hover img {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    filter: brightness(0.7);
+    -webkit-filter: brightness(0.7);
+}
+
+
+.text {
+    position: absolute;
+    left: 70%;
+}
+
+
+@media (max-width: 400px) {
+    .outer {
+        width: 220px;
+        height: 300px;
+    }
+}
