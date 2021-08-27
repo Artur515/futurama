@@ -5,12 +5,17 @@ import Loader from "../../helpers/loader/Loader";
 import ButtonEpisode from "../../helpers/buttonEpisod/ButtonEpisode";
 
 
+
+
 const Episodes = () => {
     const [episodes, setEpisodes] = useState([])
     const [loading, setLoading] = useState(false)
+
+
     useEffect(() => {
         getEpisodes()
     }, [])
+
 
     async function getEpisodes() {
         setLoading(true)
@@ -19,13 +24,16 @@ const Episodes = () => {
         setLoading(false)
     }
 
+
     // console.log(episodes)
     return (
-        <div className={style.container}>
-            {loading ? <Loader/> : episodes.map((episod) => {
-                return <ButtonEpisode number={episod.number} id={episod.id} key={episod.id}/>
-            })}
-        </div>
+
+            <div className={style.container}>
+                {loading ? <Loader/> : episodes.map((episod) => {
+                    return <ButtonEpisode number={episod.number} id={episod.id} key={episod.id}/>
+                })}
+            </div>
+
     );
 };
 

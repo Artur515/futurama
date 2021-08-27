@@ -24,4 +24,8 @@ export default class FuturamaApi {
         return response.data
     }
 
+    static getEpisode(id) {
+        return axios.get(baseURL + 'episodes?id=' + id)
+    }
+
 }
