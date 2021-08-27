@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import FuturamaApi from "../../api/futuramaApi";
 import Loader from "../../helpers/loader/Loader";
 import EpisodeContent from "./EpisodeContent";
-
+import style from './style.module.css'
 
 const Episode = () => {
     const [episode, setEpisode] = useState(null)
@@ -19,7 +19,7 @@ const Episode = () => {
 
 
     return (
-        <div>
+        <div className={style.content}>
             {episode === null ? <Loader/> :
                 <EpisodeContent number={episode[0].number}
                                 date={episode[0].originalAirDate}
