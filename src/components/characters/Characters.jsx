@@ -11,6 +11,7 @@ const Characters = () => {
         getCharacters()
     }, [])
 
+
     async function getCharacters() {
         setLoading(true)
         const characters = await FuturamaApi.getCharacters()
@@ -18,11 +19,12 @@ const Characters = () => {
         setLoading(false)
     }
 
+    console.log(characters)
 
     return (
         <div className={style.container}>
             {loading ? <Loader/> : characters.map((char) => {
-                return <Character key={char.id} image={char.images} species={char.species} name={char.name}/>
+                return <Character key={char.id} image={char.images} species={char.species} name={char.name} id={char.id}/>
             })}
         </div>
     )

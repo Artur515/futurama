@@ -18,7 +18,7 @@ const Greeting = () => {
             .then(response => setSynopsis(response.data[0].synopsis))
     }, [])
 
-    // console.log(synopsis)
+
 
     useEffect(() => {
         setTimeout(() => {

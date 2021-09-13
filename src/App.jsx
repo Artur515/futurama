@@ -1,6 +1,6 @@
 import './App.css';
 import Menu from "./components/menu/Menu";
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import Greeting from "./components/greeting/Greeting";
 import Wrapper from "./components/wrapper/Wrapper";
 
@@ -11,7 +11,7 @@ const App = () => {
                 <Route exact path='/'>
                     <Greeting/>
                 </Route>
-                <Route path='/futurama'>
+                <Route  path='/futurama'>
                     <Menu/>
                 </Route>
             </Switch>

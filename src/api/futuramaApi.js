@@ -14,6 +14,13 @@ export default class FuturamaApi {
         return response.data
     }
 
+
+    static async getCharactersInfo(id) {
+        const response = await axios.get(baseURL + 'characters/'+id)
+        return response.data
+    }
+
+
     static async getCast() {
         const response = await axios.get(baseURL + 'cast')
         return response.data

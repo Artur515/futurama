@@ -7,7 +7,6 @@ import style from './style.module.css'
 
 const Episode = () => {
     const [episode, setEpisode] = useState(null)
-
     const params = useParams()
 
 
