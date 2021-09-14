@@ -1,0 +1,9 @@
+.card {
+    padding:2rem;
+}
+
+.card_descr {
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid lightgray;
+}

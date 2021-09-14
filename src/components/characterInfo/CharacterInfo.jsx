@@ -1,36 +1,40 @@
 import React, {useEffect, useState} from 'react';
 import FuturamaApi from "../../api/futuramaApi";
-import style from "../characters/style.module.css";
 import {useParams} from "react-router-dom";
+import Loader from "../../helpers/loader/Loader";
+import Bender from '../../image/Bender_Rodriguez.png'
+import style from './style.module.css'
 
 const CharacterInfo = () => {
-    const [loading, setLoading] = useState(false)
-    const [charInfo, setCharInfo] = useState([])
+
+    const [charInfo, setCharInfo] = useState(null)
 
     const params = useParams()
 
-    console.log(charInfo)
-
     useEffect(() => {
         getCharacterInfo(params.id)
-    }, [])
+    }, [params.id])
 
 
     async function getCharacterInfo(id) {
-        setLoading(true)
-        const characters = await FuturamaApi.getCharactersInfo(id)
-        setCharInfo(characters)
-        setLoading(false)
+        const character = await FuturamaApi.getCharactersInfo(id)
+        setCharInfo(character)
     }
 
-    return (
-        <div className={style.container}>
-            {/*{loading ? <Loader/> : characters.map((char) => {*/}
-            {/*    return <Character key={char.id} image={char.images} species={char.species} name={char.name}*/}
-            {/*                      id={char.id}/>*/}
-            {/*})}*/}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ea laborum saepe tenetur. Cupiditate expedita fuga magni, minima non porro.
-        </div>
+    return (<>
+            {charInfo === null ? <Loader/> :
+                <div className={style.card}>
+                    <h3>First name: {charInfo.name.first}</h3>
+                    <h3>Last name: {charInfo.name.last}</h3>
+                    <h3>Age: {charInfo.age}</h3>
+                    <h3>{charInfo.species}</h3>
+                    <img src={charInfo.images?.main?charInfo.images?.main:Bender} alt={charInfo.name.first}/>
+                    <h2>{charInfo.name.first} sayings: </h2> {charInfo.sayings.map((say,index) => {
+                    return <p key={index} className={style.card_descr}>{say}</p>
+                })}
+                </div>
+            }
+        </>
     );
 };
 

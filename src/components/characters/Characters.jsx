@@ -19,7 +19,6 @@ const Characters = () => {
         setLoading(false)
     }
 
-    console.log(characters)
 
     return (
         <div className={style.container}>
